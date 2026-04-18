@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shir Shance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #111;
+      --muted: #555;
+      --border: #e8e8e8;
+      --bg: #fff;
+      --accent: #3a6ea8;
+      --accent-light: #eef3fa;
+      --accent-mid: #6a9fd4;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px 80px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { opacity: 0.7; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 680px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 24px;
+    }
+    .nav-name { font-size: 14px; font-weight: 500; color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--accent); opacity: 1; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 32px;
+      align-items: start;
+      padding: 48px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 { font-size: 26px; font-weight: 500; margin-bottom: 6px; }
+    .hero .role {
+      font-size: 14px; color: var(--accent); margin-bottom: 14px; font-weight: 500;
+    }
+    .hero p { font-size: 15px; color: var(--muted); }
+    .hero-photo {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--accent-light);
+      border: 3px solid var(--accent-light);
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .photo-placeholder svg { opacity: 0.3; }
+
+    section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+    h2 {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 28px;
+    }
+
+    .edu-item { margin-bottom: 20px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-school { font-weight: 500; }
+    .edu-degree { color: var(--muted); font-size: 14px; }
+    .edu-years {
+      display: inline-block;
+      font-size: 12px; color: var(--accent);
+      background: var(--accent-light);
+      padding: 1px 8px; border-radius: 20px;
+      margin-top: 4px;
+    }
+
+    .pub-item { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .pub-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .pub-journal {
+      display: inline-block;
+      font-size: 11px; font-weight: 500;
+      color: var(--accent); background: var(--accent-light);
+      padding: 2px 8px; border-radius: 20px;
+      margin-bottom: 8px; letter-spacing: 0.02em;
+    }
+    .pub-item p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 6px; }
+    .pub-item a { font-size: 12px; color: var(--accent-mid); }
+    .pub-item a:hover { color: var(--accent); opacity: 1; }
+
+    .exp-item { display: grid; grid-template-columns: 100px 1fr; gap: 16px; margin-bottom: 24px; }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-years { font-size: 12px; color: var(--accent); padding-top: 3px; }
+    .exp-role { font-weight: 500; }
+    .exp-org { font-size: 14px; color: var(--muted); }
+    .exp-desc { font-size: 14px; color: var(--muted); margin-top: 3px; }
+
+    footer { padding-top: 40px; font-size: 13px; color: #bbb; }
+
+    @media (max-width: 500px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { width: 72px; height: 72px; }
+      .exp-item { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Shir Shance</span>
+    <ul class="nav-links">
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <h1>Shir Shance</h1>
+    <p class="role">M.Sc. Student · Weizmann Institute of Science</p>
+    <p>Molecular biologist interested in gene editing, immunotherapy, and the biology of disease. Previously B.Sc. in Biotechnology at Tel Aviv University.</p>
+  </div>
+  <div class="hero-photo">
+    <!--
+      To add your photo, replace this block with:
+      <img src="photo.jpg" alt="Shir Shance" />
+    -->
+    <div class="photo-placeholder">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="14" r="7" stroke="#111" stroke-width="1.5"/>
+        <path d="M5 36c0-8.284 6.716-15 15-15s15 6.716 15 15" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu-item">
+    <div class="edu-school">Weizmann Institute of Science</div>
+    <div class="edu-degree">M.Sc. in Biological Sciences</div>
+    <div class="edu-years">2025 — Present</div>
+  </div>
+  <div class="edu-item">
+    <div class="edu-school">Tel Aviv University</div>
+    <div class="edu-degree">B.Sc. in Biotechnology</div>
+    <div class="edu-years">2021 — 2025</div>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+
+  <div class="pub-item">
+    <div class="pub-journal">Frontiers in Public Health, 2024</div>
+    <p>Mualem, R., Morales-Quezada, L., Farraj, R. H., <strong>Shance, S.</strong>, et al. Econeurobiology and brain development in children: Key factors affecting development, behavioral outcomes, and school interventions.</p>
+    <a href="https://doi.org/10.3389/fpubh.2024.1376075" target="_blank">doi:10.3389/fpubh.2024.1376075 ↗</a>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-journal">Journal of Neuroscience and Neurological Surgery, 2023</div>
+    <p>Mualem, R., Jadon, N., <strong>Shance, S.</strong>, Farraj, R. H., et al. The effect of dietary preferences on academic performance among kindergarten-aged children.</p>
+    <a href="https://doi.org/10.31579/2578-8868/277" target="_blank">doi:10.31579/2578-8868/277 ↗</a>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-journal">Journal of Neuroscience and Neurological Surgery, 2024</div>
+    <p>Farraj, R. H., Mualem, R., Leisman, G., Rustom, S., Ganem, S., <strong>Shance, S.</strong>, et al. Evaluation of educational attainment among school children from vulnerable communities after interventions of effortless walking versus strenuous sporting activity.</p>
+    <a href="https://doi.org/10.31579/2578-8868/298" target="_blank">doi:10.31579/2578-8868/298 ↗</a>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="exp-item">
+    <div class="exp-years">2019 – 2023</div>
+    <div>
+      <div class="exp-role">Network & Security Engineer</div>
+      <div class="exp-org">IBM Israel</div>
+      <div class="exp-desc">Designed and administered multi-vendor networks, maintained security systems, and led infrastructure projects.</div>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-years">2017 – 2019</div>
+    <div>
+      <div class="exp-role">Network Engineer</div>
+      <div class="exp-org">IDF · Unit 8200</div>
+      <div class="exp-desc">Served as a network engineer in the IDF's elite intelligence unit.</div>
+    </div>
+  </div>
+</section>
+
+<footer>© Shir Shance</footer>
+
+</body>
+</html>
